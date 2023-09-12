@@ -1,0 +1,29 @@
+﻿{% extends 'navbar.html' %}
+{% block title %}Portfolio{% endblock %}
+{% block body %}
+{% import 'main/widgets/buysellWidget.html' as buysellWidget %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col overflow-auto vh-100">
+			{{buysellWidget.input(stockid="q", id="a1")}}
+			{{buysellWidget.input(stockid="w", id="a2")}}
+			{{buysellWidget.input(stockid="e", id="a3")}}
+			{{buysellWidget.input(stockid="r", id="a4")}}
+			{{buysellWidget.input(stockid="t", id="a5")}}
+			{{buysellWidget.input(stockid="y", id="a6")}}
+			{{buysellWidget.input(stockid="u", id="a7")}}
+			{{buysellWidget.input(stockid="i", id="a8")}}
+			{{buysellWidget.input(stockid="o", id="a9")}}
+			
+			<div class="divider-5"></div>
+		</div>
+		<div class="col">
+			<div class="input-group">
+				<input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+				<button class="btn btn-outline-secondary" type="submit">Search</button>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

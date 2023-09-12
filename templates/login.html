@@ -1,0 +1,43 @@
+﻿{% extends 'navbar.html' %}
+{% block title %}Login{% endblock %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='login.css')}}">
+<script>document.getElementById("login-page-link").classList.add("active");</script>
+<div class="overflow-auto login-container border border-danger m-3 position-absolute top-50 start-50 translate-middle">
+    <form class="container-fluid align-middle login-form mb-3" action="authenticate" method="post">
+        {% block form %}
+        <div class="form-floating mt-3">
+            <input type="text" name="loginUsername" id="loginUsername" class="form-control" placeholder="Email address or username" />
+            <label class="form-label" for="loginUsername">Email address or username</label>
+        </div>
+
+        <div class="form-floating mt-3">
+            <input type="password" name="loginPassword" id="loginPassword" class="form-control" placeholder="Password" />
+            <label class="form-label" for="loginPassword">Password</label>
+        </div>
+        {% if session['authenticationSuccessful'] == False %}
+        <p class="text-danger"><i class="bi bi-exclamation-circle-fill"></i> Invalid usename or password</p>
+        {% endif %}
+        {% endblock %}
+        <button type="submit" class="btn btn-primary btn-block container-fluid mt-3">{% block signon %}Sign in{% endblock %}</button>
+        {% block misc %}
+        <div class="row mt-3">
+            <!--<div class="col d-flex justify-content-center">
+                <div class="form-check">
+                    <input class="form-check-input" name="rememberMe" type="checkbox" value="remember" id="rememberMe" checked />
+                    <label class="form-check-label user-select-none" for="rememberMe">Remember me</label>
+                </div>
+            </div>-->
+            <div class="col text-center">
+                <a href="forgot-password/">Forgot password?</a>
+            </div>
+        </div>
+        {% endblock %}
+        {% block links %}
+        <div class="text-center mt-3 pb-3">
+            <p>Not a member? <a href="{{url_for('register')}}">Register</a></p>
+        </div>
+        {% endblock %}
+    </form>
+</div>
+{% endblock %}

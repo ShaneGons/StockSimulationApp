@@ -1,0 +1,41 @@
+﻿{% extends 'login.html' %}
+{% block title %}Register{% endblock %}
+{% block form %}
+<div class="form-floating mt-4">
+    <input type="email" name="loginEmail" id="loginEmail" class="form-control" placeholder="email" />
+    <label class="form-label" for="loginEmail">Email address</label>
+</div>
+
+<div class="form-floating mt-3">
+    <input type="text" name="loginUsername" id="loginUsername" class="form-control" placeholder="username" />
+    <label class="form-label" for="loginUsername">Username</label>
+</div>
+
+<div class="form-floating mt-3">
+    <input type="password" name="loginPassword" id="loginPassword" class="form-control" placeholder="password" />
+    <label class="form-label" for="loginPassword">Password</label>
+</div>
+{% if session['registrationSuccessful'] == "A" %}
+<p class="text-danger"><i class="bi bi-exclamation-circle-fill"></i> Account already Exists! Please login</p>
+{% endif %}
+{% if session['registrationSuccessful'] == "B" %}
+<p class="text-danger"><i class="bi bi-exclamation-circle-fill"></i> Invalid email address!</p>
+{% endif %}
+{% if session['registrationSuccessful'] == "C" %}
+<p class="text-danger"><i class="bi bi-exclamation-circle-fill"></i> Username must contain only characters and numbers!</p>
+{% endif %}
+{% if session['registrationSuccessful'] == "D" %}
+<p class="text-danger"><i class="bi bi-exclamation-circle-fill"></i> Please fill out the form!</p>
+{% endif %}
+{% if session['registrationSuccessful'] == "E" %}
+<p class="text-danger"><i class="bi bi-exclamation-circle-fill"></i> Username or email already exists. Please choose another one!</p>
+{% endif %}
+{% endblock %}
+{% block signon %}Sign up{% endblock %}
+{% block misc %}
+{% endblock %}
+{% block links %}
+<div class="text-center mt-3 pb-5">
+    <p>Already have an account? <a href="{{url_for('login')}}">Login</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+﻿{% macro input(stockid="", id="") -%}
+<script type=text/javascript>
+
+    $(function () {
+        $('#buybutton{{id}}').bind('click', function () {
+            $.getJSON('/to-buy?stockName=GOOGL&portfolioID=1&amount=1',
+                function (data) {
+                    //do nothing
+                });
+            return false;
+        });
+    });
+</script>
+<script type=text/javascript>
+    $(function () {
+        $('#sellbutton{{id}}').bind('click', function () {
+            $.getJSON('/to-sell?stockName=GOOGL&portfolioID=1&amount=1',
+                function (data) {
+                    //do nothing
+                });
+            return false;
+        });
+    });
+</script>
+<div class="col-auto d-flex align-items-stretch border border-secondary mx-2 flex-nowrap">
+    <div class="flex-row d-flex flex-fill">
+        <div class="flex-column d-flex flex-grow-1 my-auto px-2">
+            <div class="">
+                Stock Name
+            </div>
+            <div class="">
+                Stock Information
+            </div>
+        </div>
+        <div class="flex-column">
+            <div class="d-grid col mx-auto">
+                <button type="button" id={{"buybutton"+id}} class="btn btn-outline-danger" onclick="buystock()">Buy</button>
+                <button type="button" id={{"sellbutton"+id}} class="btn btn-outline-danger" onclick="sellstock()">Sell</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function buystock() {
+        console.log("stock buy")
+    }
+
+    function sellstock() {
+        console.log("stock sell")
+    }
+</script>
+
+{%- endmacro %}
+

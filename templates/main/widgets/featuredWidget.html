@@ -1,0 +1,16 @@
+﻿{% macro input(link="", imagelink='#', name='') -%}
+<div class="col-auto d-flex align-items-stretch border border-secondary mx-2 flex-nowrap">
+    <!-- Add a link to the stock page dynamically.
+        Don't hardcode these links, because then we'll need to manually add every stock page.' -->
+    <a class="text-reset text-decoration-none" href="{{link}}">
+        <div class="row h-100">
+            <div class="col-auto m-0 px-1 d-flex align-items-center border-end border-secondary">
+                <img src="{{imagelink}}" width="20" height="20" />
+            </div>
+            <div class="col m-0 px-1 d-flex align-items-center">
+                <p class="g-0 m-0">{{name}}</p>
+            </div>
+        </div>
+    </a>
+</div>
+{%- endmacro %}

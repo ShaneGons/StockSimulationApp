@@ -1,0 +1,11 @@
+﻿{% extends 'navbar.html' %}
+{% block title %}Account{% endblock %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='main.css')}}">
+<script>document.getElementById("account-page-link").classList.add("active");</script>
+<div class="container-fluid">
+    <h1>{{session['username']}}</h1>
+    <h4>{{session['email']}}</h4>
+    <a class="btn btn-outline-danger" id="" href="{{ url_for('logout') }}">Log out</a>
+</div>
+{% endblock %}

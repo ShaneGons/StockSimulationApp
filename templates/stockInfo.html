@@ -1,0 +1,114 @@
+﻿{% extends 'navbar.html' %}
+{% block title %}Stock Info{% endblock %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='stockInfo.css')}}">
+<div class="container-fluid vh-100 overflow-hidden">
+    <div class="row h-100">
+        <div class="col-9">
+            <div class="row">
+                <div class="col px-1">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div id="tradingview_15d27"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                        <script type="text/javascript">
+                            new TradingView.widget(
+                                {
+                                    "autosize": true,
+                                    "symbol": "{{ stock_exchange }}:{{ stock_name }}",
+                                    "interval": "D",
+                                    "timezone": "Etc/UTC",
+                                    "theme": "light",
+                                    "style": "1",
+                                    "locale": "en",
+                                    "toolbar_bg": "#f1f3f6",
+                                    "enable_publishing": false,
+                                    "allow_symbol_change": true,
+                                    "container_id": "tradingview_15d27"
+                                }
+                            );
+                        </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+            <div class="row h-75">
+                <div class="col p-0 mx-1">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js" async>
+                        {
+                          "width": "100%",
+                          "height": "95%",
+                          "colorTheme": "light",
+                          "isTransparent": false,
+                          "symbol": "{{ stock_exchange }}:{{ stock_name }}",
+                          "locale": "en"
+                        }
+                        </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+                <div class="col p-0 mx-1">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
+                        {
+                          "colorTheme": "light",
+                          "isTransparent": false,
+                          "largeChartUrl": "",
+                          "displayMode": "adaptive",
+                          "width": "100%",
+                          "height": "95%",
+                          "symbol": "{{ stock_exchange }}:{{ stock_name }}",
+                          "locale": "en"
+                        }
+                        </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+                <div class="col p-0 mx-1">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                        {
+                          "interval": "1m",
+                          "width": "100%",
+                          "isTransparent": false,
+                          "height": "95%",
+                          "symbol": "{{ stock_exchange }}:{{ stock_name }}",
+                          "showIntervalTabs": true,
+                          "locale": "en",
+                          "colorTheme": "light"
+                        }
+                        </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+        </div>
+        <div class="col px-1">
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+                {
+                  "feedMode": "symbol",
+                  "symbol": "{{ stock_exchange }}:{{ stock_name }}",
+                  "colorTheme": "light",
+                  "isTransparent": false,
+                  "displayMode": "regular",
+                  "width": "100%",
+                  "height": "100%",
+                  "locale": "en"
+                }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </div>
+    </div>
+</div>
+{% endblock %}

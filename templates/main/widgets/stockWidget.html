@@ -1,0 +1,17 @@
+﻿{% macro input(link="", imagelink='#', percent='000', value='0.00') -%}
+<div class="col-4 px-3 gy-2">
+    <!-- Add a link to the stock page dynamically.
+        Don't hardcode these links, because then we'll need to manually add every stock page.' -->
+    <a class="text-reset text-decoration-none" href="{{link}}">
+        <div class="row stockWidget border border-secondary">
+            <div class="col-auto m-0 d-flex align-items-center">
+                <img src="{{imagelink}}" width="20" height="20" />
+            </div>
+            <div class="col m-0 p-0">
+                <p class="stockWidget-percent g-0 m-0">{{percent}}%</p>
+                <p class="stockWidget-value g-0 m-0">{{value}}</p>
+            </div>
+        </div>
+    </a>
+</div>
+{%- endmacro %}

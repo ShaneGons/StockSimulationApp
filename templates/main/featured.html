@@ -1,0 +1,28 @@
+﻿{% import 'main/widgets/featuredWidget.html' as featuredWidget %}
+<div class="container-fluid d-flex">
+    <div class="row my-3 d-flex overflow-auto">
+        <div class="col-auto d-flex align-items-center text-center p-0 mx-2">
+            <h4>Featured Stocks</h4>
+        </div>
+        <div class="col d-flex featured-display">
+            <div class="row flex-nowrap p-0 mx-2">
+                {{ featuredWidget.input(imagelink='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png', name='Google')}}
+                {{ featuredWidget.input(imagelink='https://pngimg.com/uploads/microsoft/microsoft_PNG5.png', name='Microsoft')}}
+                {{ featuredWidget.input(imagelink='https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png', name='Apple')}}
+                {{ featuredWidget.input(imagelink='https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png', name='Apple')}}
+                {{ featuredWidget.input(imagelink='https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png', name='Apple')}}
+                {{ featuredWidget.input(imagelink='https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png', name='Apple')}}
+                {{ featuredWidget.input(imagelink='https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png', name='Apple')}}
+                {{ featuredWidget.input(imagelink='https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png', name='Apple')}}
+                {{ featuredWidget.input(imagelink='https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png', name='Apple')}}
+                {{ featuredWidget.input(imagelink='https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png', name='Apple')}}
+                <div class="col-auto d-flex align-items-stretch border border-secondary mx-2">
+                    <div class="d-flex align-items-center text-center">
+                        + ADD
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

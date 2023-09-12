@@ -1,0 +1,36 @@
+﻿.graph-row {
+    height: 200px;
+}
+.graph-column {
+    width: 400px;
+}
+.featured-display {
+    height: 5rem;
+    overflow-x: auto;
+    overflow-y: visible;
+}
+
+.maincontent {
+    height: 100%;
+}
+
+.sidebar {
+    min-height: 100vh;
+}
+
+.sidebar-element {
+    font-size: 1.5rem;
+}
+
+.news-bar {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.stockWidget {
+    height: 3rem;
+}
+.stockWidget-percent {
+}
+.stockWidget-value {
+}

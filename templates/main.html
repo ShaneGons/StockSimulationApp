@@ -1,0 +1,24 @@
+﻿{% extends 'navbar.html' %}
+{% block title %}Main{% endblock %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='main.css')}}">
+<script>document.getElementById("main-page-link").classList.add("active");</script>
+<div class="container-fluid">
+    <div class="row maincontent">
+        <div class="col-9">
+            {% include 'main/featured.html' %}
+            <div class="row m-3">
+                <div class="col me-3">
+                    <iframe src="/main/graph/" title="graph/news tabs" class="h-100 container-fluid"></iframe>
+                </div>
+                <div class="col me-3">
+                    {% include 'main/displayStocks.html' %}
+                </div>
+            </div>
+        </div>
+
+        {% include 'main/sidebar.html' %}
+    </div>
+</div>
+
+{% endblock %}

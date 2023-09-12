@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.leaderboard{
+    margin-top: 10px;
+    max-width: 50rem;
+    border-radius: 1rem;
+    margin: 4rem auto;
+    box-shadow: 2px 2px 16px 1px #aaa;
+    font-family: sans-serif;
+}
+
+h1{
+    font-size: 3rem;
+    line-height: 3rem;
+    position: absolute;
+    margin-left: 3rem;
+    top: 4rem;
+}
+
+img{
+    height: 10rem;
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+}
+
+table{
+    background-color: #16181e;
+    color: #999;
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    overflow: auto;
+}
+
+thead{
+    font-size: 0.7rem;
+    color: #555;
+    text-transform: uppercase;
+}
+
+tbody .name-link{
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.name-link:link{
+    text-decoration: none;
+}
+
+.name-link:visited{
+    text-decoration: none;
+}
+
+.name-link:hover{
+    text-decoration: none;
+}
+
+.name-link:active{
+    text-decoration: none;
+}
+
+tbody tr:nth-child(2n){
+    background-color: #1f232c;
+}
+.name{
+    text-align: left;
+}
+
+.rank .credits{
+    text-align: right;
+}
+
+.rank{
+    width: 4ch;
+    padding-left: 1rem
+}
+
+.credits{
+    width: 8ch;
+}
+
+
+th{
+    padding: 1.5rem 1rem 0.5rem;
+}
+
+td{
+    padding: 1rem 1rem;
+}
+
+.name-link:hover{
+    color: #ff7500;
+}
+
+h6{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 4px;
+    margin-left: 10px;
+    background-color: #ff7500;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    font-family: sans-serif;
+}
+
+header {
+    background-color: #ff7500;
+    color: white;
+    text-transform: uppercase;
+    height: 10rem;
+    position: relative;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}

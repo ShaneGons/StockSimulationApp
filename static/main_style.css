@@ -1,0 +1,44 @@
+body {
+	overflow: hidden;
+}
+
+.home-page-content-wrapper {
+	overflow: auto;
+	background-color: crimson;
+	height: 100vh;
+}
+
+.divider-1 {
+	height: 1rem;
+	background-color: rgba(0, 0, 0, .1);
+	border-width: 1px 0;
+	box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+.divider-2 {
+	height: 2rem;
+	background-color: rgba(0, 0, 0, .1);
+	border-width: 1px 0;
+	box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+.divider-3 {
+	height: 3rem;
+	background-color: rgba(0, 0, 0, .1);
+	border-width: 1px 0;
+	box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+.divider-4 {
+	height: 4rem;
+	background-color: rgba(0, 0, 0, .1);
+	border-width: 1px 0;
+	box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+.divider-5 {
+	height: 5rem;
+	background-color: rgba(0, 0, 0, .1);
+	border-width: 1px 0;
+	box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.navbar-block {
+	height: 50px;
+}

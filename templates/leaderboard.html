@@ -1,0 +1,31 @@
+{% extends 'navbar.html' %}
+{% block title %}Leaderboard{% endblock %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='leaderboard.css')}}">
+<script>document.getElementById("leaderboard-page-link").classList.add("active");</script>
+<div class="leaderboard">
+    <header>
+        <h6 class="last-refreshed">Last Refreshed: {{ current_time }}</h6>
+        <h1>Leader board</h1>
+        <img src="{{url_for('.static', filename='logo-color.png')}}" alt="">
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th class="rank"></th>
+                <th class="name">User</th>
+                <th class="credits">Credits</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr class="data">
+                    <td class="rank">{{ loop.index0+1 }}</td>
+                    <td class="name"><a class="name-link" href="{{ url_for('home') }}">{{ user[0] }}</a></td>
+                    <td class="credits">{{ user[1] }}</td>
+                </tr>
+            {% endfor %}  
+        </tbody>
+    </table>
+</div>
+{% endblock %}
