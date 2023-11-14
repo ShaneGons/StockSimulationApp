@@ -10,7 +10,7 @@ class DatabaseConnection:
             login = self.get_db_login_for_local()
             self.db = MySQLdb.Connect(host="dbhost.cs.man.ac.uk", user=login[0], password=login[1])
         else:
-            self.db = MySQLdb.Connect(host="sql8.freesqldatabase.com", user="sql8637257", password="1NWfhSLf2g")
+            self.db = MySQLdb.Connect(host="sql8.freesqldatabase.com", user="sql8661831", password="ltFMFin3Zk")
 
     def get_db_login_for_local(self):
         if not os.path.exists(DB_LOGIN_FILE):
@@ -27,7 +27,7 @@ class DatabaseConnection:
 
     def execute(self, sql, vars=()):
         cursor = self.db.cursor()
-        cursor.execute("USE sql8637257;", vars)
+        cursor.execute("USE sql8661831;", vars)
         # print("Executing: " + sql)
         cursor.execute(sql)
         result = cursor.fetchall()
@@ -51,17 +51,5 @@ class DatabaseConnection:
         self.db.close()
 if __name__ == "__main__":
     db = DatabaseConnection()
-    db.setup_database() # This line of code runs setup_database.sql
-    # add_user_sql = """
-    # INSERT INTO Users (username, email, password)
-    # VALUES ('abhinav03', 'abhinav.akkena@student.manchester.ac.uk', 'mineman125');
-    # """
-    # db.execute(add_user_sql)
-    # response = db.execute("SELECT UserID FROM Users WHERE username = 'abhinav03';")
-    # userID = response[0][0]
-    # add_profile_sql = f"""
-    # INSERT INTO Portfolios (UserID, credit)
-    # VALUES ({userID}, 100000);
-    # """
-    # db.execute(add_profile_sql)
+    db.setup_database()
     print(db.execute("SELECT * FROM Portfolios"))

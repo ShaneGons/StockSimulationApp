@@ -1,4 +1,4 @@
-USE sql8637257;
+USE sql8661831;
 
 DROP TABLE IF EXISTS Stock_portfolio;
 DROP TABLE IF EXISTS Portfolios;
@@ -37,6 +37,7 @@ CREATE TABLE Stock_portfolio (
 INSERT INTO Stocks (StockName)
     VALUES ('AAPL');
 
+--Do not use these usernames to access site, create your own account
 INSERT INTO Users (username, email, password)
     VALUES ('abhinav03', 'abhinav.akkena@student.manchester.ac.uk', 'mineman125'),
      ('jay1', 'jay.hebblethwaite@student.manchester.ac.uk', 'pa55w0rd'),

@@ -37,24 +37,24 @@ def home():
 def forgot_password():
     return render_template('forgotpassword.html')
 
-@app.route('/login/forgot-password/authenticate/', methods=['POST'])
-def verify_otp():
-    if request.method == 'POST' and 'recoveryEmail' in request.form:
-        user_email = request.form['recoveryEmail']
-        #db = DatabaseConnection()
-        #user_portfolio = db.execute(f"SELECT * FROM Portfolios WHERE email = {user_email}")
-        if False:
-            print("Account doesn't exist")
-            return render_template('forgotpassword.html')
-        else:
-            otp = ""
-            for i in range(6):
-                digit = random.randint(0,9)
-                otp += str(digit)
+# @app.route('/login/forgot-password/authenticate/', methods=['POST'])
+# def verify_otp():
+#     if request.method == 'POST' and 'recoveryEmail' in request.form:
+#         user_email = request.form['recoveryEmail']
+#         #db = DatabaseConnection()
+#         #user_portfolio = db.execute(f"SELECT * FROM Portfolios WHERE email = {user_email}")
+#         if False:
+#             print("Account doesn't exist")
+#             return render_template('forgotpassword.html')
+#         else:
+#             otp = ""
+#             for i in range(6):
+#                 digit = random.randint(0,9)
+#                 otp += str(digit)
             
-            msg = otp
-            send_email(user_email, msg)
-    return False
+#             msg = otp
+#             send_email(user_email, msg)
+#     return False
 
 
 # Portfolio Overview
@@ -77,7 +77,6 @@ def update_table():
             current_quote = get_current_quote_2(stockName)
             
             price = float(current_quote["c"])
-            # price = random.randint(1,100)
 
         except finnhub.FinnhubAPIException as e:
             if e.code == 429: # if we exceed 30 API Requests Per Minute
@@ -438,12 +437,12 @@ def bubbleSort(users):
                 users[j+1] = temp
     return users
 
-def send_email(user_email, msg):
-    send_email = "xpstockofficial@gmail.com"
-    send_pass = "vxepilhkczftmwbw"
+# def send_email(user_email, msg):
+#     send_email = "xpstockofficial@gmail.com"
+#     send_pass = "vxepilhkczftmwbw"
 
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
-    server.login(send_email, send_pass)
-    server.sendmail(send_email,user_email,msg)
-    print("Email Sent")
+#     server = smtplib.SMTP('smtp.gmail.com', 587)
+#     server.starttls()
+#     server.login(send_email, send_pass)
+#     server.sendmail(send_email,user_email,msg)
+#     print("Email Sent")
