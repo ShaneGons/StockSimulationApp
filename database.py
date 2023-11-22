@@ -10,7 +10,7 @@ class DatabaseConnection:
             login = self.get_db_login_for_local()
             self.db = MySQLdb.Connect(host="dbhost.cs.man.ac.uk", user=login[0], password=login[1])
         else:
-            self.db = MySQLdb.Connect(host="sql8.freesqldatabase.com", user="sql8661831", password="ltFMFin3Zk")
+            self.db = MySQLdb.Connect(host="sql.freedb.tech", user="freedb_ShaneGons", password="gkK!dGb&6qv9&8!")
 
     def get_db_login_for_local(self):
         if not os.path.exists(DB_LOGIN_FILE):
@@ -27,7 +27,7 @@ class DatabaseConnection:
 
     def execute(self, sql, vars=()):
         cursor = self.db.cursor()
-        cursor.execute("USE sql8661831;", vars)
+        cursor.execute("USE freedb_StockDB;", vars)
         # print("Executing: " + sql)
         cursor.execute(sql)
         result = cursor.fetchall()

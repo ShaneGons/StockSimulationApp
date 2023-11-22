@@ -219,7 +219,7 @@ def leaderboard():
         userID = db.execute(f"SELECT UserID from Users WHERE username = '{person[0]}';")
         credits = db.execute(f"SELECT credit FROM Portfolios WHERE UserID = '{userID[0][0]}';")
         score += credits[0][0]
-        user = [person[0],'$'+str(score)]
+        user = [person[0],'$'+"{:.2f}".format(score)]
         users.append(user)
     users = bubbleSort(users)
     t = time.localtime()

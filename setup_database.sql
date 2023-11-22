@@ -1,4 +1,4 @@
-USE sql8661831;
+USE freedb_StockDB;
 
 DROP TABLE IF EXISTS Stock_portfolio;
 DROP TABLE IF EXISTS Portfolios;
@@ -34,21 +34,3 @@ CREATE TABLE Stock_portfolio (
     FOREIGN KEY (PortfolioID) REFERENCES Portfolios(PortfolioID),
     PRIMARY KEY (StockName, PortfolioID));
 
-INSERT INTO Stocks (StockName)
-    VALUES ('AAPL');
-
---Do not use these usernames to access site, create your own account
-INSERT INTO Users (username, email, password)
-    VALUES ('abhinav03', 'abhinav.akkena@student.manchester.ac.uk', 'mineman125'),
-     ('jay1', 'jay.hebblethwaite@student.manchester.ac.uk', 'pa55w0rd'),
-     ('matthew12', 'matthew.richards-4@student.manchester.ac.uk', 'manguscarson');
-
-INSERT INTO Portfolios (UserID, credit)
-    VALUES (1, 100000),
-     (2, 100000),
-     (3, 100000);
-
-INSERT INTO Stock_portfolio (StockName, PortfolioID, amount, average_price, current_price, pl)
-    VALUES ('AAPL', 1, 9, 150.47, 150.47, 0),
-     ('AAPL', 2, 6, 150.47, 150.47, 0),
-     ('AAPL', 3, 18, 150.47, 150.47, 0);
